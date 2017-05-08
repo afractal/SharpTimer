@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/afractal/SharpTimer.svg?token=sN9qiKvy34fJyhwzHohM&branch=master)](https://travis-ci.com/afractal/SharpTimer)
 
 ## Changes
 
