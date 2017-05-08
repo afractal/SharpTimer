@@ -1,3 +1,15 @@
+'use strict';
+
+/* global describe, it, before, beforeEach, after, afterEach */
+
+import { assert } from 'chai';
+import { Timer } from '../src/timer';
+
+describe('hello', function () {
+    it('should greet the world', function () {
+        assert.equal('Hello, world!', 'Hello, world!');
+    });
+});
 
 // =============================
 
