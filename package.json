@@ -1,19 +1,25 @@
 {
-  "name": "sharp-timer",
-  "version": "0.1.0",
-  "description": "Timer library with api` similar to .NET timers.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/afractal/SharpTimer.git"
-  },
-  "author": "afractal",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/afractal/SharpTimer/issues"
-  },
-  "homepage": "https://github.com/afractal/SharpTimer#readme"
+    "name": "sharp-timer",
+    "version": "0.1.0",
+    "author": "afractal",
+    "description": "A simple timers library with api similar to System.Timers in .NET",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/afractal/SharpTimer.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/afractal/SharpTimer/issues"
+    },
+    "homepage": "https://github.com/afractal/SharpTimer#readme",
+    "devDependencies": {
+        "@types/chai": "^3.5.2",
+        "@types/mocha": "^2.2.41",
+        "chai": "^3.5.0",
+        "mocha": "^3.3.0"
+    }
 }
