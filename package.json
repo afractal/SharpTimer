@@ -5,7 +5,7 @@
     "description": "A simple timers library with api similar to System.Timers in .NET",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Hello World"
+        "test": "echo \"Hello World\""
     },
     "repository": {
         "type": "git",
