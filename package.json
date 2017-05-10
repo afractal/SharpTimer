@@ -1,9 +1,9 @@
 {
     "name": "sharp-timer",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "author": "afractal",
     "description": "A simple timers library with api similar to System.Timers in .NET",
-    "main": "index.js",
+    "main": "build/src/timer.js",
     "scripts": {
         "test": "mocha ./build/test/*.js "
     },
