@@ -5,7 +5,7 @@
 
 *v.0.1.0*
 
-- timer functionality
+- base timer functionality
 
 ## License
 
