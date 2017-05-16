@@ -14,6 +14,6 @@ install:
 test_script:
     - node --version
     - npm --version
-    - npm run testonce
+    - mocha --recursive ./dist/test/
 
 build: off
