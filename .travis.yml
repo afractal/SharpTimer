@@ -9,4 +9,4 @@ install:
 
 script:
     # - npm run build
-    - npm run testonce
+    - mocha --recursive ./dist/test/
