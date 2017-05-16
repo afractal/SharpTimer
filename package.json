@@ -1,28 +1,30 @@
 {
-  "name": "sharp-timer",
-  "version": "0.0.1",
-  "author": "afractal",
-  "description": "A simple timers library with api similar to System.Timers in .NET",
-  "main": "build/src/timer.js",
-  "license": "MIT",
-  "homepage": "https://github.com/afractal/SharpTimer#readme",
-  "scripts": {
-    "start": "tsc -w",
-    "test": "concurrently \" tsc -w  \" \" mocha --recursive ./dist/test  --watch \" "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/afractal/SharpTimer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/afractal/SharpTimer/issues"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@types/chai": "^3.5.2",
-    "@types/mocha": "^2.2.41",
-    "chai": "^3.5.0",
-    "concurrently": "^3.4.0",
-    "mocha": "^3.4.1"
-  }
+    "name": "sharp-timer",
+    "version": "0.0.1",
+    "author": "afractal",
+    "description": "A simple timers library with api similar to System.Timers in .NET",
+    "main": "build/src/timer.js",
+    "license": "MIT",
+    "homepage": "https://github.com/afractal/SharpTimer#readme",
+    "scripts": {
+        "start": "tsc -w",
+        "build": "tsc",
+        "test": "concurrently \" tsc -w  \" \" mocha --recursive ./dist/test  --watch \" ",
+        "testonce": " \" mocha --recursive ./dist/test \" "
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/afractal/SharpTimer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/afractal/SharpTimer/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@types/chai": "^3.5.2",
+        "@types/mocha": "^2.2.41",
+        "chai": "^3.5.0",
+        "concurrently": "^3.4.0",
+        "mocha": "^3.4.1"
+    }
 }
