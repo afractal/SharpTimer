@@ -1,15 +1,15 @@
 export class Timer implements SharpTimer.ITimer {
     enabled: boolean;
+    stopped: boolean;
     // autoReset: boolean;
     private _intervalElapsedEvents = new Array<() => void>();
     private _intervalElapsingEvents = new Array<(interval: number) => void>();
-    private _isTimerStopped;
     constructor(interval: number) {
         this.checkForValidInterval(interval);
         this.enabled = true;
         // this.autoReset = false;
         this.interval = interval;
-        this._isTimerStopped = false;
+        this.stopped = false;
     }
 
     private _interval: number;
@@ -22,24 +22,25 @@ export class Timer implements SharpTimer.ITimer {
             for (const intervalElapsingEvent of this._intervalElapsingEvents) {
                 intervalElapsingEvent(this._interval);
             }
-
-            if (this._interval === 0) {
-                for (const intervalElapsedEvent of this._intervalElapsedEvents) {
-                    intervalElapsedEvent();
-                }
-            }
         }
     }
 
     start() {
         this.enabled = true;
         const decreaseTime = () => {
-            if (this.enabled && !this._isTimerStopped && this.interval > 0) {
+            if (this.enabled && !this.stopped && this.interval > 0) {
                 this.interval--;
                 setTimeout(decreaseTime, 1000);
             }
+            else if (this.enabled && !this.stopped && this.interval === 0) {
+                this.enabled = false;
+                for (const intervalElapsedEvent of this._intervalElapsedEvents) {
+                    intervalElapsedEvent();
+                }
+                return;
+            }
             else if (!this.enabled) { setTimeout(decreaseTime, 1000); }
-            else if (this._isTimerStopped) return;
+            else if (this.stopped) return;
         }
         setTimeout(decreaseTime, 1000);
     }
@@ -49,7 +50,7 @@ export class Timer implements SharpTimer.ITimer {
     }
 
     stop() {
-        this._isTimerStopped = true;
+        this.stopped = true;
     }
 
     onIntervalElapsed(intervalElapsedHandler) {

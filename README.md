@@ -6,7 +6,10 @@
 
 *v.0.1.0*
 
-- basic timer functionality
+- added timer feature
+- added stopwatch feature
+- added timespan feature
+- unit tests for timespan, stopwatch, timer
 
 ## License
 
