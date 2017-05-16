@@ -9,7 +9,8 @@
         "outDir": "dist"
     },
     "files": [
-        "src"
+        "src",
+        "test"
     ],
     "exclude": [
         "node_modules"
