@@ -8,10 +8,6 @@
         "sourceMap": true,
         "outDir": "dist"
     },
-    "files": [
-        "src",
-        "test"
-    ],
     "exclude": [
         "node_modules"
     ]

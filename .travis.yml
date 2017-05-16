@@ -4,9 +4,9 @@ node_js:
     - stable
 
 install:
-    - npm install -g typescript
+    # - npm install -g typescript
     - npm install
 
 script:
-    - npm run build
+    # - npm run build
     - npm run testonce
