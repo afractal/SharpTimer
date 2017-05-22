@@ -1,18 +1,23 @@
 export class Timer implements SharpTimer.ITimer {
-    enabled: boolean;
-    stopped: boolean;
     // autoReset: boolean;
-    private _intervalElapsedEvents = new Array<() => void>();
-    private _intervalElapsingEvents = new Array<(interval: number) => void>();
+    private _enabled: boolean;
+    private _stopped: boolean;
+    private _interval: number;
+    private _intervalElapsedEvents: Array<() => void>;
+    private _intervalElapsingEvents: Array<(interval: number) => void>;
     constructor(interval: number) {
         this.checkForValidInterval(interval);
-        this.enabled = true;
         // this.autoReset = false;
         this.interval = interval;
-        this.stopped = false;
+        this._enabled = true;
+        this._stopped = false;
+        this._intervalElapsedEvents = new Array<() => void>();
+        this._intervalElapsingEvents = new Array<(interval: number) => void>();
     }
 
-    private _interval: number;
+    get enabled() { return this._enabled; }
+    get stopped() { return this._stopped; }
+
     get interval() { return this._interval; }
     set interval(value: number) {
         this.checkForValidInterval(value);
@@ -26,31 +31,31 @@ export class Timer implements SharpTimer.ITimer {
     }
 
     start() {
-        this.enabled = true;
+        this._enabled = true;
         const decreaseTime = () => {
             if (this.enabled && !this.stopped && this.interval > 0) {
                 this.interval--;
                 setTimeout(decreaseTime, 1000);
             }
             else if (this.enabled && !this.stopped && this.interval === 0) {
-                this.enabled = false;
+                this._enabled = false;
                 for (const intervalElapsedEvent of this._intervalElapsedEvents) {
                     intervalElapsedEvent();
                 }
                 return;
             }
-            else if (!this.enabled) { setTimeout(decreaseTime, 1000); }
+            else if (!this.enabled) setTimeout(decreaseTime, 1000);
             else if (this.stopped) return;
         }
         setTimeout(decreaseTime, 1000);
     }
 
     pause() {
-        this.enabled = false;
+        this._enabled = false;
     }
 
     stop() {
-        this.stopped = true;
+        this._stopped = true;
     }
 
     onIntervalElapsed(intervalElapsedHandler) {
@@ -62,12 +67,12 @@ export class Timer implements SharpTimer.ITimer {
     }
 
     toString() {
-        let endTime = new Date();
-        endTime.setSeconds(endTime.getSeconds() + this.interval);
+        let endTime = new Date(Date.now());
+        endTime.setSeconds(endTime.getUTCSeconds() + this.interval);
 
         const now = Date.now();
-        const diffMinutes = new Date((+endTime) - now).getMinutes();
-        const diffSeconds = new Date((+endTime) - now).getSeconds();
+        const diffMinutes = new Date((+endTime) - now).getUTCMinutes();
+        const diffSeconds = new Date((+endTime) - now).getUTCSeconds();
         return `${this.getDoubleDigit(diffMinutes)}:${this.getDoubleDigit(diffSeconds)}`;
     }
 

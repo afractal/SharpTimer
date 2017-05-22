@@ -2,15 +2,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Timer = (function () {
     function Timer(interval) {
-        // autoReset: boolean;
-        this._intervalElapsedEvents = new Array();
-        this._intervalElapsingEvents = new Array();
         this.checkForValidInterval(interval);
-        this.enabled = true;
         // this.autoReset = false;
         this.interval = interval;
-        this.stopped = false;
+        this._enabled = true;
+        this._stopped = false;
+        this._intervalElapsedEvents = new Array();
+        this._intervalElapsingEvents = new Array();
     }
+    Object.defineProperty(Timer.prototype, "enabled", {
+        get: function () { return this._enabled; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Timer.prototype, "stopped", {
+        get: function () { return this._stopped; },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Timer.prototype, "interval", {
         get: function () { return this._interval; },
         set: function (value) {
@@ -28,33 +37,32 @@ var Timer = (function () {
     });
     Timer.prototype.start = function () {
         var _this = this;
-        this.enabled = true;
+        this._enabled = true;
         var decreaseTime = function () {
             if (_this.enabled && !_this.stopped && _this.interval > 0) {
                 _this.interval--;
                 setTimeout(decreaseTime, 1000);
             }
             else if (_this.enabled && !_this.stopped && _this.interval === 0) {
-                _this.enabled = false;
+                _this._enabled = false;
                 for (var _i = 0, _a = _this._intervalElapsedEvents; _i < _a.length; _i++) {
                     var intervalElapsedEvent = _a[_i];
                     intervalElapsedEvent();
                 }
                 return;
             }
-            else if (!_this.enabled) {
+            else if (!_this.enabled)
                 setTimeout(decreaseTime, 1000);
-            }
             else if (_this.stopped)
                 return;
         };
         setTimeout(decreaseTime, 1000);
     };
     Timer.prototype.pause = function () {
-        this.enabled = false;
+        this._enabled = false;
     };
     Timer.prototype.stop = function () {
-        this.stopped = true;
+        this._stopped = true;
     };
     Timer.prototype.onIntervalElapsed = function (intervalElapsedHandler) {
         this._intervalElapsedEvents.push(intervalElapsedHandler);
@@ -63,11 +71,11 @@ var Timer = (function () {
         this._intervalElapsingEvents.push(intervalElapsingHandler);
     };
     Timer.prototype.toString = function () {
-        var endTime = new Date();
-        endTime.setSeconds(endTime.getSeconds() + this.interval);
+        var endTime = new Date(Date.now());
+        endTime.setSeconds(endTime.getUTCSeconds() + this.interval);
         var now = Date.now();
-        var diffMinutes = new Date((+endTime) - now).getMinutes();
-        var diffSeconds = new Date((+endTime) - now).getSeconds();
+        var diffMinutes = new Date((+endTime) - now).getUTCMinutes();
+        var diffSeconds = new Date((+endTime) - now).getUTCSeconds();
         return this.getDoubleDigit(diffMinutes) + ":" + this.getDoubleDigit(diffSeconds);
     };
     Timer.prototype.getDoubleDigit = function (number) {

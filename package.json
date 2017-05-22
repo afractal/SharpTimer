@@ -1,15 +1,16 @@
 {
     "name": "sharp-timer",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "afractal",
-    "description": "A simple timers library with api similar to System.Timers in .NET",
-    "main": "build/src/timer.js",
+    "description": "A simple timers library with api similar to the .NET equivalents",
+    "main": "./index.js",
     "license": "MIT",
     "homepage": "https://github.com/afractal/SharpTimer#readme",
     "scripts": {
         "start": "tsc -w",
         "build": "tsc",
-        "test": "concurrently \" tsc -w  \" \" mocha --recursive ./dist/test  --watch \" ",
+        "build:w": "tsc -w",
+        "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
         "testonce": " \" mocha --recursive ./dist/test \" "
     },
     "repository": {
@@ -19,10 +20,19 @@
     "bugs": {
         "url": "https://github.com/afractal/SharpTimer/issues"
     },
+    "keywords": [
+        "sharp-timer",
+        "sharp",
+        "timer",
+        "timers",
+        "dotnet",
+        "dotnet timer"
+    ],
     "dependencies": {},
     "devDependencies": {
         "@types/chai": "^3.5.2",
         "@types/mocha": "^2.2.41",
+        "@types/node": "^7.0.21",
         "chai": "^3.5.0",
         "concurrently": "^3.4.0",
         "mocha": "^3.4.1"

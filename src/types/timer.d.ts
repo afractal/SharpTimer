@@ -2,6 +2,7 @@ declare namespace SharpTimer {
 
     export interface ITimer {
         enabled: boolean;
+        stopped: boolean;
         // autoReset: boolean;
         interval: number;
 
