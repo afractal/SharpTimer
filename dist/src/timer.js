@@ -4,7 +4,7 @@ var Timer = (function () {
     function Timer(interval) {
         this.checkForValidInterval(interval);
         // this.autoReset = false;
-        this.interval = interval;
+        this._interval = interval;
         this._enabled = true;
         this._stopped = false;
         this._intervalElapsedEvents = new Array();
@@ -90,4 +90,3 @@ var Timer = (function () {
     return Timer;
 }());
 exports.Timer = Timer;
-//# sourceMappingURL=timer.js.map

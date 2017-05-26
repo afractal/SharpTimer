@@ -93,4 +93,3 @@ Stopwatch.millisPerSecond = 1000;
 Stopwatch.millisPerMinute = Stopwatch.millisPerSecond * 60;
 Stopwatch.millisPerHour = Stopwatch.millisPerMinute * 60;
 exports.Stopwatch = Stopwatch;
-//# sourceMappingURL=stopwatch.js.map

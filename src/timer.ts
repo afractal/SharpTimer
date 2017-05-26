@@ -1,18 +1,18 @@
-export class Timer implements SharpTimer.ITimer {
+export class Timer {
     // autoReset: boolean;
     private _enabled: boolean;
     private _stopped: boolean;
     private _interval: number;
     private _intervalElapsedEvents: Array<() => void>;
-    private _intervalElapsingEvents: Array<(interval: number) => void>;
+    private _intervalElapsingEvents: Array<(intervalValue: number) => void>;
     constructor(interval: number) {
         this.checkForValidInterval(interval);
         // this.autoReset = false;
-        this.interval = interval;
+        this._interval = interval;
         this._enabled = true;
         this._stopped = false;
         this._intervalElapsedEvents = new Array<() => void>();
-        this._intervalElapsingEvents = new Array<(interval: number) => void>();
+        this._intervalElapsingEvents = new Array<(intervalValue: number) => void>();
     }
 
     get enabled() { return this._enabled; }

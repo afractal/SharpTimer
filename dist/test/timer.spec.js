@@ -13,6 +13,7 @@ describe('Timer', function () {
         it('should set the interval property to the interval parameter', function () {
             var expectedInterval = 20;
             var timer = new timer_1.Timer(expectedInterval);
+            console.log('timer', timer);
             chai_1.assert.equal(timer.interval, expectedInterval);
             timer = null;
         });
@@ -129,4 +130,3 @@ describe('Timer', function () {
         });
     });
 });
-//# sourceMappingURL=timer.spec.js.map

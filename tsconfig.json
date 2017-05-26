@@ -3,12 +3,14 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        // "module": "umd",
-        // "strict": true,
-        "sourceMap": true,
+        "declaration": true,
+        "sourceMap": false,
         "outDir": "dist"
+        // "moduleResolution": "node"
+        // "strict": true,
     },
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "dist"
     ]
 }

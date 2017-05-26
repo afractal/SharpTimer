@@ -13,6 +13,7 @@ describe('Timer', () => {
         it('should set the interval property to the interval parameter', () => {
             const expectedInterval = 20;
             let timer = new Timer(expectedInterval);
+            console.log('timer', timer);
             assert.equal(timer.interval, expectedInterval);
 
             timer = null;

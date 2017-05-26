@@ -1,9 +1,10 @@
 {
     "name": "sharp-timer",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "afractal",
     "description": "A simple timers library with api similar to the .NET equivalents",
-    "main": "./index.js",
+    "main": "./dist/src/index.js",
+    "types": "./dist/src/index",
     "license": "MIT",
     "homepage": "https://github.com/afractal/SharpTimer#readme",
     "scripts": {
