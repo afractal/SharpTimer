@@ -13,7 +13,6 @@ describe('Timer', function () {
         it('should set the interval property to the interval parameter', function () {
             var expectedInterval = 20;
             var timer = new timer_1.Timer(expectedInterval);
-            console.log('timer', timer);
             chai_1.assert.equal(timer.interval, expectedInterval);
             timer = null;
         });
@@ -81,6 +80,9 @@ describe('Timer', function () {
             chai_1.assert.equal(timer.stopped, expectedStopped);
             timer = null;
         });
+    });
+    describe('resume', function () {
+        it('should set enabled property to true');
     });
     describe('stop', function () {
         it('should set stopped property to true', function () {

@@ -61,6 +61,9 @@ var Timer = (function () {
     Timer.prototype.pause = function () {
         this._enabled = false;
     };
+    Timer.prototype.resume = function () {
+        this._enabled = true;
+    };
     Timer.prototype.stop = function () {
         this._stopped = true;
     };

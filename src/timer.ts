@@ -1,18 +1,21 @@
+export type ElapsedEvent = () => void;
+export type ElapsingEvent = (intervalValue: number) => void;
+
 export class Timer {
     // autoReset: boolean;
     private _enabled: boolean;
     private _stopped: boolean;
     private _interval: number;
-    private _intervalElapsedEvents: Array<() => void>;
-    private _intervalElapsingEvents: Array<(intervalValue: number) => void>;
+    private _intervalElapsedEvents: Array<ElapsedEvent>;
+    private _intervalElapsingEvents: Array<ElapsingEvent>;
     constructor(interval: number) {
         this.checkForValidInterval(interval);
         // this.autoReset = false;
         this._interval = interval;
         this._enabled = true;
         this._stopped = false;
-        this._intervalElapsedEvents = new Array<() => void>();
-        this._intervalElapsingEvents = new Array<(intervalValue: number) => void>();
+        this._intervalElapsedEvents = new Array<ElapsedEvent>();
+        this._intervalElapsingEvents = new Array<ElapsingEvent>();
     }
 
     get enabled() { return this._enabled; }
@@ -52,6 +55,10 @@ export class Timer {
 
     pause() {
         this._enabled = false;
+    }
+
+    resume() {
+        this._enabled = true;
     }
 
     stop() {
