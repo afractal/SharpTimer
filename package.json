@@ -1,6 +1,6 @@
 {
     "name": "sharp-timer",
-    "version": "0.0.3-b",
+    "version": "0.0.3-c",
     "author": "afractal",
     "description": "A simple timers library with api similar to the .NET equivalents.",
     "main": "./dist/src/index.js",
