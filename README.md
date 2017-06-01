@@ -11,7 +11,7 @@
 - [x] added stopwatch feature
 - [ ] added timespan feature
 - [x] unit tests for timer
-- [] unit tests for stopwatch
+- [ ] unit tests for stopwatch
 - [ ] unit tests for timespan
 
 
