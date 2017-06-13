@@ -1,11 +1,10 @@
+import { millisPerSecond, millisPerMinute, millisPerHour } from './constants';
+
 export class Stopwatch {
     private _isRunning: boolean;
     private _elapsedMilliseconds: number;
     private _startedTimeInMillis: number;
     private _intervalIds: Array<number | NodeJS.Timer>;
-    private static readonly millisPerSecond = 1000;
-    private static readonly millisPerMinute = Stopwatch.millisPerSecond * 60;
-    private static readonly millisPerHour = Stopwatch.millisPerMinute * 60;
     constructor() {
         this._startedTimeInMillis = Date.now();
         this._intervalIds = new Array<number | NodeJS.Timer>();
@@ -16,22 +15,37 @@ export class Stopwatch {
     get elapsed() {
         const ms = this._elapsedMilliseconds % 1000;
 
-        const s = (this._elapsedMilliseconds / Stopwatch.millisPerSecond) % 60;
+        const s = (this._elapsedMilliseconds / millisPerSecond) % 60;
         const secs = this.getDoubleDigit(s);
 
-        const m = (this._elapsedMilliseconds / Stopwatch.millisPerMinute) % 60;
+        const m = (this._elapsedMilliseconds / millisPerMinute) % 60;
         const mins = this.getDoubleDigit(m);
 
-        const h = (this._elapsedMilliseconds / Stopwatch.millisPerHour) % 60;
+        const h = (this._elapsedMilliseconds / millisPerHour) % 60;
         const hrs = this.getDoubleDigit(h);
 
         return `${hrs}:${mins}:${secs}:${ms}`;
     }
-    get elapsedMilliseconds() { return this._elapsedMilliseconds; }
-    get elapsedSeconds() { return this._elapsedMilliseconds / 1000; }
-    get elapsedMinutes() { return Math.floor(this.elapsedSeconds / 60); }
-    get elapsedHours() { return Math.floor(this.elapsedMinutes / 60); }
-    get isRunning() { return this._isRunning; }
+
+    get elapsedMilliseconds() {
+        return this._elapsedMilliseconds;
+    }
+
+    get elapsedSeconds() {
+        return this._elapsedMilliseconds / millisPerSecond;
+    }
+
+    get elapsedMinutes() {
+        return Math.floor(this._elapsedMilliseconds / millisPerMinute);
+    }
+
+    get elapsedHours() {
+        return Math.floor(this._elapsedMilliseconds / millisPerHour);
+    }
+
+    get isRunning() {
+        return this._isRunning;
+    }
 
     static startNew() {
         const stopwatch = new Stopwatch();

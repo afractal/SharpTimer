@@ -3,9 +3,6 @@ export declare class Stopwatch {
     private _elapsedMilliseconds;
     private _startedTimeInMillis;
     private _intervalIds;
-    private static readonly millisPerSecond;
-    private static readonly millisPerMinute;
-    private static readonly millisPerHour;
     constructor();
     readonly elapsed: string;
     readonly elapsedMilliseconds: number;

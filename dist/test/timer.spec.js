@@ -14,19 +14,16 @@ describe('Timer', function () {
             var expectedInterval = 20;
             var timer = new timer_1.Timer(expectedInterval);
             chai_1.assert.equal(timer.interval, expectedInterval);
-            timer = null;
         });
         it('should set the enabled property to true', function () {
             var expectedEnabled = true;
             var timer = new timer_1.Timer(20);
             chai_1.assert.equal(timer.enabled, expectedEnabled);
-            timer = null;
         });
         it('should set the stopped property to false', function () {
             var expectedIsStopped = false;
             var timer = new timer_1.Timer(20);
             chai_1.assert.equal(timer.stopped, expectedIsStopped);
-            timer = null;
         });
     });
     describe('start', function () {
@@ -35,7 +32,6 @@ describe('Timer', function () {
             var timer = new timer_1.Timer(20);
             timer.start();
             chai_1.assert.equal(timer.enabled, expectedEnabled);
-            timer = null;
         });
         it('should decrease interval continuously', function (done) {
             var expectedInterval = 20;
@@ -47,7 +43,6 @@ describe('Timer', function () {
                 chai_1.assert.notEqual(timer.interval, expectedInterval);
                 done();
                 timer.stop();
-                timer = null;
             });
         });
         it('should set the enabled property to false when interval elapsed completely', function (done) {
@@ -58,7 +53,6 @@ describe('Timer', function () {
                 chai_1.assert.strictEqual(timer.enabled, expectedEnabled);
                 done();
                 timer.stop();
-                timer = null;
             });
             timer.start();
         });
@@ -70,7 +64,6 @@ describe('Timer', function () {
             timer.start();
             timer.pause();
             chai_1.assert.equal(timer.enabled, expectedEnabled);
-            timer = null;
         });
         it('should not set the stopped property to true', function () {
             var expectedStopped = false;
@@ -78,7 +71,6 @@ describe('Timer', function () {
             timer.start();
             timer.pause();
             chai_1.assert.equal(timer.stopped, expectedStopped);
-            timer = null;
         });
     });
     describe('resume', function () {
@@ -91,7 +83,6 @@ describe('Timer', function () {
             timer.start();
             timer.stop();
             chai_1.assert.equal(timer.stopped, expectedStopped);
-            timer = null;
         });
         it('should not set the enabled property to false', function () {
             var expectedEnabled = true;
@@ -99,7 +90,6 @@ describe('Timer', function () {
             timer.start();
             timer.stop();
             chai_1.assert.equal(timer.enabled, expectedEnabled);
-            timer = null;
         });
     });
     describe('toString', function () {
@@ -108,7 +98,6 @@ describe('Timer', function () {
             var expectedTimerStr = "00:" + interval;
             var timer = new timer_1.Timer(interval);
             chai_1.assert.strictEqual(timer.toString(), expectedTimerStr);
-            timer = null;
         });
         it('should return a valid double digit representation of the time', function () {
             var interval1 = 20 * 60;
@@ -126,9 +115,6 @@ describe('Timer', function () {
             chai_1.assert.strictEqual(timerStr1, expectedTimerStr1);
             chai_1.assert.strictEqual(timerStr2, expectedTimerStr2);
             chai_1.assert.strictEqual(timerStr3, expectedTimerStr3);
-            timer1 = null;
-            timer2 = null;
-            timer3 = null;
         });
     });
 });

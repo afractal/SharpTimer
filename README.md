@@ -7,18 +7,18 @@
 
 *v.0.1.0*
 
-- [x] added timer feature
-- [x] added stopwatch feature
-- [ ] added timespan feature
+- [x] add timer feature
+- [x] add stopwatch feature
+- [ ] add timespan feature
 - [x] unit tests for timer
 - [ ] unit tests for stopwatch
 - [ ] unit tests for timespan
+- [ ] add [type definition files](http//)
 
 
 ## Examples
 
 ### *Timer example*
----
 
 Initializing a new timer and specifying an iterval of 5 min, specify the interval in seconds:
 

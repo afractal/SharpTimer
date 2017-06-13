@@ -65,11 +65,11 @@ export class Timer {
         this._stopped = true;
     }
 
-    onIntervalElapsed(intervalElapsedHandler) {
+    onIntervalElapsed(intervalElapsedHandler: ElapsedEvent) {
         this._intervalElapsedEvents.push(intervalElapsedHandler);
     }
 
-    onIntervalElapsing(intervalElapsingHandler) {
+    onIntervalElapsing(intervalElapsingHandler: ElapsingEvent) {
         this._intervalElapsingEvents.push(intervalElapsingHandler);
     }
 

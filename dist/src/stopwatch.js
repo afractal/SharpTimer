@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var constants_1 = require("./constants");
 var Stopwatch = (function () {
     function Stopwatch() {
         this._startedTimeInMillis = Date.now();
@@ -10,11 +11,11 @@ var Stopwatch = (function () {
     Object.defineProperty(Stopwatch.prototype, "elapsed", {
         get: function () {
             var ms = this._elapsedMilliseconds % 1000;
-            var s = (this._elapsedMilliseconds / Stopwatch.millisPerSecond) % 60;
+            var s = (this._elapsedMilliseconds / constants_1.millisPerSecond) % 60;
             var secs = this.getDoubleDigit(s);
-            var m = (this._elapsedMilliseconds / Stopwatch.millisPerMinute) % 60;
+            var m = (this._elapsedMilliseconds / constants_1.millisPerMinute) % 60;
             var mins = this.getDoubleDigit(m);
-            var h = (this._elapsedMilliseconds / Stopwatch.millisPerHour) % 60;
+            var h = (this._elapsedMilliseconds / constants_1.millisPerHour) % 60;
             var hrs = this.getDoubleDigit(h);
             return hrs + ":" + mins + ":" + secs + ":" + ms;
         },
@@ -22,27 +23,37 @@ var Stopwatch = (function () {
         configurable: true
     });
     Object.defineProperty(Stopwatch.prototype, "elapsedMilliseconds", {
-        get: function () { return this._elapsedMilliseconds; },
+        get: function () {
+            return this._elapsedMilliseconds;
+        },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Stopwatch.prototype, "elapsedSeconds", {
-        get: function () { return this._elapsedMilliseconds / 1000; },
+        get: function () {
+            return this._elapsedMilliseconds / constants_1.millisPerSecond;
+        },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Stopwatch.prototype, "elapsedMinutes", {
-        get: function () { return Math.floor(this.elapsedSeconds / 60); },
+        get: function () {
+            return Math.floor(this._elapsedMilliseconds / constants_1.millisPerMinute);
+        },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Stopwatch.prototype, "elapsedHours", {
-        get: function () { return Math.floor(this.elapsedMinutes / 60); },
+        get: function () {
+            return Math.floor(this._elapsedMilliseconds / constants_1.millisPerHour);
+        },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(Stopwatch.prototype, "isRunning", {
-        get: function () { return this._isRunning; },
+        get: function () {
+            return this._isRunning;
+        },
         enumerable: true,
         configurable: true
     });
@@ -89,7 +100,4 @@ var Stopwatch = (function () {
     };
     return Stopwatch;
 }());
-Stopwatch.millisPerSecond = 1000;
-Stopwatch.millisPerMinute = Stopwatch.millisPerSecond * 60;
-Stopwatch.millisPerHour = Stopwatch.millisPerMinute * 60;
 exports.Stopwatch = Stopwatch;

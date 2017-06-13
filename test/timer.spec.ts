@@ -14,16 +14,12 @@ describe('Timer', () => {
             const expectedInterval = 20;
             let timer = new Timer(expectedInterval);
             assert.equal(timer.interval, expectedInterval);
-
-            timer = null;
         });
 
         it('should set the enabled property to true', () => {
             const expectedEnabled = true;
             let timer = new Timer(20);
             assert.equal(timer.enabled, expectedEnabled);
-
-            timer = null;
         });
 
         it('should set the stopped property to false', () => {
@@ -31,7 +27,6 @@ describe('Timer', () => {
             let timer = new Timer(20);
             assert.equal(timer.stopped, expectedIsStopped);
 
-            timer = null;
         });
     });
 
@@ -41,8 +36,6 @@ describe('Timer', () => {
             let timer = new Timer(20);
             timer.start();
             assert.equal(timer.enabled, expectedEnabled);
-
-            timer = null;
         });
 
         it('should decrease interval continuously', function (done) {
@@ -56,7 +49,6 @@ describe('Timer', () => {
                 assert.notEqual(timer.interval, expectedInterval);
                 done();
                 timer.stop();
-                timer = null;
             });
         });
 
@@ -69,7 +61,6 @@ describe('Timer', () => {
                 done();
 
                 timer.stop();
-                timer = null;
             });
             timer.start();
         });
@@ -82,8 +73,6 @@ describe('Timer', () => {
             timer.start();
             timer.pause();
             assert.equal(timer.enabled, expectedEnabled);
-
-            timer = null;
         });
 
         it('should not set the stopped property to true', () => {
@@ -92,8 +81,6 @@ describe('Timer', () => {
             timer.start();
             timer.pause();
             assert.equal(timer.stopped, expectedStopped);
-
-            timer = null;
         });
     });
 
@@ -108,8 +95,6 @@ describe('Timer', () => {
             timer.start();
             timer.stop();
             assert.equal(timer.stopped, expectedStopped);
-
-            timer = null;
         });
 
         it('should not set the enabled property to false', () => {
@@ -118,8 +103,6 @@ describe('Timer', () => {
             timer.start();
             timer.stop();
             assert.equal(timer.enabled, expectedEnabled);
-
-            timer = null;
         });
     });
 
@@ -129,8 +112,6 @@ describe('Timer', () => {
             const expectedTimerStr = `00:${interval}`;
             let timer = new Timer(interval);
             assert.strictEqual(timer.toString(), expectedTimerStr);
-
-            timer = null;
         });
 
         it('should return a valid double digit representation of the time', () => {
@@ -154,10 +135,6 @@ describe('Timer', () => {
             assert.strictEqual(timerStr1, expectedTimerStr1);
             assert.strictEqual(timerStr2, expectedTimerStr2);
             assert.strictEqual(timerStr3, expectedTimerStr3);
-
-            timer1 = null;
-            timer2 = null;
-            timer3 = null;
         });
     });
 });

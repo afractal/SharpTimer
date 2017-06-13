@@ -5,9 +5,8 @@
         "module": "commonjs",
         "declaration": true,
         "sourceMap": false,
+        "strict": true,
         "outDir": "dist"
-        // "moduleResolution": "node"
-        // "strict": true,
     },
     "exclude": [
         "node_modules",

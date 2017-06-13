@@ -1,6 +1,6 @@
 {
     "name": "sharp-timer",
-    "version": "0.0.3-c",
+    "version": "0.0.4",
     "author": "afractal",
     "description": "A simple timers library with api similar to the .NET equivalents.",
     "main": "./dist/src/index.js",
@@ -25,17 +25,15 @@
         "sharp-timer",
         "sharp",
         "timer",
-        "timers",
-        "dotnet",
-        "dotnet timer"
+        "timers"
     ],
     "dependencies": {},
     "devDependencies": {
-        "@types/chai": "^3.5.2",
+        "@types/chai": "^4.0.0",
         "@types/mocha": "^2.2.41",
-        "@types/node": "^7.0.21",
-        "chai": "^3.5.0",
+        "@types/node": "^7.0.31",
+        "chai": "^4.0.2",
         "concurrently": "^3.4.0",
-        "mocha": "^3.4.1"
+        "mocha": "^3.4.2"
     }
 }
