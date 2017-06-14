@@ -66,47 +66,19 @@ export class Timespan {
         this._milliseconds += timespan.milliseconds;
     }
 
-    subtractMutable(timespan: Timespan) {
+    substractMutable(timespan: Timespan) {
         this._milliseconds -= timespan.milliseconds;
     }
 
     add(timespan: Timespan) {
-        return new Timespan(this._milliseconds += timespan.milliseconds);
+        return new Timespan(this._milliseconds + timespan.milliseconds);
     }
 
     substract(timespan: Timespan) {
-        return new Timespan(this._milliseconds -= timespan.milliseconds);
+        return new Timespan(this._milliseconds - timespan.milliseconds);
     }
 
     negate() {
         return new Timespan(-this._milliseconds);
     }
 }
-
-// let timespan = Timespan.fromDays(3.5);
-// let timespan2 = Timespan.fromDays(3.6);
-// console.log('compare', Timespan.compare(timespan, timespan2));
-// console.log('milliseconds', timespan.milliseconds);
-// console.log('seconds', timespan.seconds);
-// console.log('minutes', timespan.minutes);
-// console.log('hours', timespan.hours);
-// console.log('days', timespan.days);
-
-// const {
-//     days,
-//     hours,
-//     minutes,
-//     seconds,
-//     milliseconds
-//  } = Timespan.fromDays(3.5);
-
-
-
-
-/*
-milliseconds 259200000
-seconds 259200
-minutes 4320
-hours 72
-days 3
-*/

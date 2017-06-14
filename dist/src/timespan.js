@@ -73,14 +73,14 @@ var Timespan = (function () {
     Timespan.prototype.addMutable = function (timespan) {
         this._milliseconds += timespan.milliseconds;
     };
-    Timespan.prototype.subtractMutable = function (timespan) {
+    Timespan.prototype.substractMutable = function (timespan) {
         this._milliseconds -= timespan.milliseconds;
     };
     Timespan.prototype.add = function (timespan) {
-        return new Timespan(this._milliseconds += timespan.milliseconds);
+        return new Timespan(this._milliseconds + timespan.milliseconds);
     };
     Timespan.prototype.substract = function (timespan) {
-        return new Timespan(this._milliseconds -= timespan.milliseconds);
+        return new Timespan(this._milliseconds - timespan.milliseconds);
     };
     Timespan.prototype.negate = function () {
         return new Timespan(-this._milliseconds);
@@ -88,25 +88,3 @@ var Timespan = (function () {
     return Timespan;
 }());
 exports.Timespan = Timespan;
-// let timespan = Timespan.fromDays(3.5);
-// let timespan2 = Timespan.fromDays(3.6);
-// console.log('compare', Timespan.compare(timespan, timespan2));
-// console.log('milliseconds', timespan.milliseconds);
-// console.log('seconds', timespan.seconds);
-// console.log('minutes', timespan.minutes);
-// console.log('hours', timespan.hours);
-// console.log('days', timespan.days);
-// const {
-//     days,
-//     hours,
-//     minutes,
-//     seconds,
-//     milliseconds
-//  } = Timespan.fromDays(3.5);
-/*
-milliseconds 259200000
-seconds 259200
-minutes 4320
-hours 72
-days 3
-*/

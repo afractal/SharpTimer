@@ -14,7 +14,7 @@ export declare class Timespan {
     static compare(t1: Timespan, t2: Timespan): 1 | 0 | -1;
     static equals(t1: Timespan, t2: Timespan): boolean;
     addMutable(timespan: Timespan): void;
-    subtractMutable(timespan: Timespan): void;
+    substractMutable(timespan: Timespan): void;
     add(timespan: Timespan): Timespan;
     substract(timespan: Timespan): Timespan;
     negate(): Timespan;

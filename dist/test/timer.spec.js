@@ -74,7 +74,14 @@ describe('Timer', function () {
         });
     });
     describe('resume', function () {
-        it('should set enabled property to true');
+        it('should set enabled property to true', function () {
+            var expectedStopped = true;
+            var timer = new timer_1.Timer(20);
+            timer.start();
+            timer.stop();
+            timer.resume();
+            chai_1.assert.equal(timer.enabled, expectedStopped);
+        });
     });
     describe('stop', function () {
         it('should set stopped property to true', function () {

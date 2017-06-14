@@ -2,7 +2,7 @@
     "name": "sharp-timer",
     "version": "0.0.4",
     "author": "afractal",
-    "description": "A simple timers library with api similar to the .NET equivalents.",
+    "description": "A simple timers utility library with api (mostly) inspired  by .NET equivalents",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index",
     "license": "MIT",
@@ -33,7 +33,7 @@
         "@types/mocha": "^2.2.41",
         "@types/node": "^7.0.31",
         "chai": "^4.0.2",
-        "concurrently": "^3.4.0",
-        "mocha": "^3.4.2"
+        "mocha": "^3.4.2",
+        "concurrently": "^3.4.0"
     }
 }

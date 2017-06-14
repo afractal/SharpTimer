@@ -85,7 +85,14 @@ describe('Timer', () => {
     });
 
     describe('resume', () => {
-        it('should set enabled property to true');
+        it('should set enabled property to true', () => {
+            const expectedStopped = true;
+            let timer = new Timer(20);
+            timer.start();
+            timer.stop();
+            timer.resume();
+            assert.equal(timer.enabled, expectedStopped);
+        });
     });
 
     describe('stop', () => {

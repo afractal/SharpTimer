@@ -9,10 +9,8 @@
 
 - [x] add timer feature
 - [x] add stopwatch feature
-- [ ] add timespan feature
-- [x] unit tests for timer
-- [ ] unit tests for stopwatch
-- [ ] unit tests for timespan
+- [x] add timespan feature
+- [x] add tests for timer, stopwatch and timespan
 - [ ] add [type definition files](http//)
 
 
@@ -33,8 +31,6 @@ timer.onIntervalElapsing(i => {
 ```
 
 Register an interval elapsed event handler.
-Alsp remember to dereference the timer instance when you are done
-so the gc can easily collect it.
 ```language javascript
 timer.onIntervalElapsed(() => {
     timer.stop();
