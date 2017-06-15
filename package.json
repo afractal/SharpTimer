@@ -12,7 +12,7 @@
         "build": "tsc",
         "build:w": "tsc -w",
         "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
-        "testonce": " \" mocha --recursive ./dist/test \" "
+        "testonce": " \" mocha --recursive ./dist/test \""
     },
     "repository": {
         "type": "git",

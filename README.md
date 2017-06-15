@@ -34,7 +34,6 @@ Register an interval elapsed event handler.
 ```language javascript
 timer.onIntervalElapsed(() => {
     timer.stop();
-    timer = null;
     console.log('time completely elapsed');
 });
 ```
@@ -43,7 +42,52 @@ Finally, call the start instance method.
 
 `timer.start();`
 
+### *Stopwatch example*
+
+Initializing a new Stopwatch by calling the ctor
+
+`let stopwatch = new Stopwatch();`
+
+`stopwatch.start();`
+
+or the static `startNew` function
+
+`let stopwatch = Stopwatch.startNew();`
+
+Remember to call dispose on the stopwatch after your done with that instance:
+```language javascript
+const intervalId = setInterval(() => {
+    console.log(`elapsedMilliseconds: ${stopwatch.elapsedMilliseconds}`);
+}, 10);
+
+setTimeout(() => {
+    clearInterval(intervalId);
+    stopwatch.dispose();
+}, 100);
+```
+
+### *Timespan example*
+
+Constructs a Timespan object by calling of its static functions
+```language javascript
+const {
+    days,
+    hours,
+    minutes,
+    seconds,
+    milliseconds
+} = Timespan.fromDays(3);
+```
+and access its instance properties
+```language javascript
+console.log(`milliseconds: ${milliseconds}`); // 259200000
+console.log(`seconds: ${seconds}`); // 259200
+console.log(`minutes: ${minutes}`); // 4320
+console.log(`hours: ${hours}`); // 72
+console.log(`days: ${days}`); // 3
+```
+
 ## License
 
-This product is licensed under ther [MIT](https://choosealicense.com/licenses/mit/) license.
+This product is licensed under ther [MIT](./LICENSE.md) license.
 

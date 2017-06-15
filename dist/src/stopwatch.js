@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var constants_1 = require("./constants");
 var Stopwatch = (function () {
     function Stopwatch() {
+        // initializing in not needed because it is overriden in start function
         this._startedTimeInMillis = Date.now();
         this._intervalIds = new Array();
         this._elapsedMilliseconds = 0;
@@ -82,6 +83,7 @@ var Stopwatch = (function () {
     Stopwatch.prototype.reset = function () {
         this._isRunning = false;
         this._startedTimeInMillis = Date.now();
+        this._elapsedMilliseconds = 0;
     };
     Stopwatch.prototype.restart = function () {
         this.reset();

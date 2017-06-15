@@ -6,6 +6,7 @@ export class Stopwatch {
     private _startedTimeInMillis: number;
     private _intervalIds: Array<number | NodeJS.Timer>;
     constructor() {
+        // initializing in not needed because it is overriden in start function
         this._startedTimeInMillis = Date.now();
         this._intervalIds = new Array<number | NodeJS.Timer>();
         this._elapsedMilliseconds = 0;
@@ -73,6 +74,7 @@ export class Stopwatch {
     reset() {
         this._isRunning = false;
         this._startedTimeInMillis = Date.now();
+        this._elapsedMilliseconds = 0;
     }
 
     restart() {

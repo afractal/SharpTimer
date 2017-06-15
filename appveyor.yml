@@ -5,11 +5,7 @@ environment:
 
 install:
     - ps: Install-Product node $env:nodejs_version
-    # - npm install -g typescript
     - npm install
-
-# before_test:
-#     - npm run build
 
 test_script:
     - node --version

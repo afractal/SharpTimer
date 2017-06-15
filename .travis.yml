@@ -4,9 +4,7 @@ node_js:
     - "6"
 
 install:
-    # - npm install -g typescript
     - npm install
 
 script:
-    # - npm run build
     - mocha --recursive ./dist/test/
