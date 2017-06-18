@@ -7,11 +7,11 @@
 
 *v.0.1.0*
 
-- [x] add timer feature
-- [x] add stopwatch feature
-- [x] add timespan feature
-- [x] add tests for timer, stopwatch and timespan
-- [ ] add [type definition files](http//)
+- [x] timer feature
+- [x] stopwatch feature
+- [x] timespan feature
+- [x] [type definitions](https://www.npmjs.com/package/@types/sharp-timer)
+- [x] tests for timer, stopwatch and timespan
 
 
 ## Examples
@@ -23,7 +23,7 @@ Initializing a new timer and specifying an iterval of 5 min, specify the interva
 `let timer = new Timer(60 * 5);`
 
 Register an interval elapsing event handler:
-```language javascript
+```javascript
 timer.onIntervalElapsing(i => {
     console.log(`remaing time in seconds: ${i}`);
     console.log(`time is elapsing: ${timer.toString()}`);
@@ -31,7 +31,7 @@ timer.onIntervalElapsing(i => {
 ```
 
 Register an interval elapsed event handler.
-```language javascript
+```javascript
 timer.onIntervalElapsed(() => {
     timer.stop();
     console.log('time completely elapsed');
@@ -55,7 +55,7 @@ or the static `startNew` function
 `let stopwatch = Stopwatch.startNew();`
 
 Remember to call dispose on the stopwatch after your done with that instance:
-```language javascript
+```javascript
 const intervalId = setInterval(() => {
     console.log(`elapsedMilliseconds: ${stopwatch.elapsedMilliseconds}`);
 }, 10);
@@ -69,7 +69,7 @@ setTimeout(() => {
 ### *Timespan example*
 
 Constructs a Timespan object by calling of its static functions
-```language javascript
+```javascript
 const {
     days,
     hours,
@@ -78,8 +78,9 @@ const {
     milliseconds
 } = Timespan.fromDays(3);
 ```
+
 and access its instance properties
-```language javascript
+```javascript
 console.log(`milliseconds: ${milliseconds}`); // 259200000
 console.log(`seconds: ${seconds}`); // 259200
 console.log(`minutes: ${minutes}`); // 4320
