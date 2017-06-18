@@ -106,7 +106,6 @@ describe('Timer', function () {
             var timer = new timer_1.Timer(interval);
             var parsedValue = parseInt(timer.toString().slice(3));
             chai_1.assert.closeTo(parsedValue, interval, 1);
-            // assert.deepEqual(timer.toString(), expectedTimerStr);
         });
         it('should return a valid double digit representation of the time', function () {
             var interval1 = 20 * 60;
@@ -116,14 +115,20 @@ describe('Timer', function () {
             var expectedTimerStr2 = '08:00';
             var expectedTimerStr3 = '04:20';
             var timer1 = new timer_1.Timer(interval1);
-            var timerStr1 = timer1.toString();
+            var parsedSecondsTimer1 = parseInt(timer1.toString().slice(3));
+            var parsedMinutesTimer1 = parseInt(timer1.toString().slice(0, 3));
             var timer2 = new timer_1.Timer(interval2);
-            var timerStr2 = timer2.toString();
+            var parsedSecondsTimer2 = parseInt(timer2.toString().slice(3));
+            var parsedMinutesTimer2 = parseInt(timer2.toString().slice(0, 3));
             var timer3 = new timer_1.Timer(interval3);
-            var timerStr3 = timer3.toString();
-            chai_1.assert.strictEqual(timerStr1, expectedTimerStr1);
-            chai_1.assert.strictEqual(timerStr2, expectedTimerStr2);
-            chai_1.assert.strictEqual(timerStr3, expectedTimerStr3);
+            var parsedSecondsTimer3 = parseInt(timer3.toString().slice(3));
+            var parsedMinutesTimer3 = parseInt(timer3.toString().slice(0, 3));
+            chai_1.assert.closeTo(parsedSecondsTimer1, 0, 1);
+            chai_1.assert.closeTo(parsedMinutesTimer1, 20, 1);
+            chai_1.assert.closeTo(parsedSecondsTimer2, 0, 1);
+            chai_1.assert.closeTo(parsedMinutesTimer2, 8, 1);
+            chai_1.assert.closeTo(parsedSecondsTimer3, 20, 1);
+            chai_1.assert.closeTo(parsedMinutesTimer3, 4, 1);
         });
     });
 });

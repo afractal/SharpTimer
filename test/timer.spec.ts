@@ -117,10 +117,10 @@ describe('Timer', () => {
         it('should return a valid string representation', () => {
             const interval = 20;
             const expectedTimerStr = `00:${interval}`;
+
             let timer = new Timer(interval);
-            let parsedValue = parseInt(timer.toString().slice(3));
+            const parsedValue = parseInt(timer.toString().slice(3));
             assert.closeTo(parsedValue, interval, 1);
-            // assert.deepEqual(timer.toString(), expectedTimerStr);
         });
 
         it('should return a valid double digit representation of the time', () => {
@@ -133,17 +133,25 @@ describe('Timer', () => {
             const expectedTimerStr3 = '04:20';
 
             let timer1 = new Timer(interval1);
-            const timerStr1 = timer1.toString();
+            const parsedSecondsTimer1 = parseInt(timer1.toString().slice(3));
+            const parsedMinutesTimer1 = parseInt(timer1.toString().slice(0, 3));
 
             let timer2 = new Timer(interval2);
-            const timerStr2 = timer2.toString();
+            const parsedSecondsTimer2 = parseInt(timer2.toString().slice(3));
+            const parsedMinutesTimer2 = parseInt(timer2.toString().slice(0, 3));
 
             let timer3 = new Timer(interval3);
-            const timerStr3 = timer3.toString();
+            const parsedSecondsTimer3 = parseInt(timer3.toString().slice(3));
+            const parsedMinutesTimer3 = parseInt(timer3.toString().slice(0, 3));
 
-            assert.strictEqual(timerStr1, expectedTimerStr1);
-            assert.strictEqual(timerStr2, expectedTimerStr2);
-            assert.strictEqual(timerStr3, expectedTimerStr3);
+            assert.closeTo(parsedSecondsTimer1, 0, 1);
+            assert.closeTo(parsedMinutesTimer1, 20, 1);
+
+            assert.closeTo(parsedSecondsTimer2, 0, 1);
+            assert.closeTo(parsedMinutesTimer2, 8, 1);
+
+            assert.closeTo(parsedSecondsTimer3, 20, 1);
+            assert.closeTo(parsedMinutesTimer3, 4, 1);
         });
     });
 });
