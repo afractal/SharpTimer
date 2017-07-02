@@ -1,6 +1,7 @@
 [![npm version](https://badge.fury.io/js/sharp-timer.svg)](https://badge.fury.io/js/sharp-timer)
 [![Build Status](https://travis-ci.com/afractal/SharpTimer.svg?token=sN9qiKvy34fJyhwzHohM&branch=master)](https://travis-ci.com/afractal/SharpTimer)
 [![Build status](https://ci.appveyor.com/api/projects/status/grw42490qo9lnokb?svg=true)](https://ci.appveyor.com/project/hermesxgjini/sharptimer)
+[![Coverage Status](https://coveralls.io/repos/github/afractal/SharpTimer/badge.svg?branch=master)](https://coveralls.io/github/afractal/SharpTimer?branch=master)
 [![codebeat badge](https://codebeat.co/badges/4b996a15-b593-4b28-9c61-84e0029912fc)](https://codebeat.co/projects/github-com-afractal-sharptimer-master)
 
 ## Changes
