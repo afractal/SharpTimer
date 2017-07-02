@@ -7,4 +7,5 @@ install:
     - npm install
 
 script:
-    - mocha --recursive ./dist/test/
+    # - mocha --recursive ./dist/test/
+    - npm run cover
