@@ -1,14 +1,20 @@
 language: node_js
 
-node_js:
-    - "6"
+environment:
+    nodejs_version: "6"
+
+branches:
+    # whitelist
+    only:
+        - master
 
 install:
+    - ps: Install-Product node $env:nodejs_version
     - npm install
+    - npm install -g typescript
 
 script:
     # - mocha --recursive ./dist/test/
-    - npm install -g typescript
     - npm run build
     - npm run cover
 

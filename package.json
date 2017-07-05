@@ -10,6 +10,7 @@
     "scripts": {
         "start": "tsc -w",
         "build": "tsc",
+        "build:ci": "tsc --noEmit --rootDir ./src",
         "build:w": "tsc -w",
         "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
         "testonce": " \" mocha --recursive ./dist/test \"",
