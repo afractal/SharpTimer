@@ -2,7 +2,6 @@ export type ElapsedEvent = () => void;
 export type ElapsingEvent = (intervalValue: number) => void;
 
 export class Timer {
-    // autoReset: boolean;
     private _enabled: boolean;
     private _stopped: boolean;
     private _interval: number;
