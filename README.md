@@ -7,7 +7,7 @@
 
 ## Changes
 
-*v.0.1.1*
+*v.0.1.2*
 
 - [x] timer feature
 - [x] stopwatch feature
