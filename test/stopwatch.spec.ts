@@ -2,6 +2,7 @@ import { assert } from 'chai';
 import { Stopwatch } from '../src/stopwatch';
 
 describe('Stopwatch', () => {
+
     const increaseIntervalContinuosly = function (done: MochaDone) {
         let stopwatch = new Stopwatch();
         stopwatch.start();
