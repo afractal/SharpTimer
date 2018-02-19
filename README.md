@@ -5,6 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/afractal/SharpTimer/badge.svg?branch=master)](https://coveralls.io/github/afractal/SharpTimer?branch=master)
 [![codebeat badge](https://codebeat.co/badges/4b996a15-b593-4b28-9c61-84e0029912fc)](https://codebeat.co/projects/github-com-afractal-sharptimer-master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e50887c7ae8916778bfb/maintainability)](https://codeclimate.com/github/afractal/SharpTimer/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e50887c7ae8916778bfb/test_coverage)](https://codeclimate.com/github/afractal/SharpTimer/test_coverage)
 
 ## Changes
 
