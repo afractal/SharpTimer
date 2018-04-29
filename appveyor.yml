@@ -1,7 +1,10 @@
-version: 0.0.{build}
+version: 0.1.{build}
 
 environment:
-    nodejs_version: "6"
+    nodejs_version: "8"
+
+platform:
+    - x64
 
 install:
     - ps: Install-Product node $env:nodejs_version
@@ -11,6 +14,5 @@ test_script:
     - node --version
     - npm --version
     - npm run build
-    - npm run testonce
 
 build: off
