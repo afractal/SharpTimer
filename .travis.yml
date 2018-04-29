@@ -13,7 +13,6 @@ install:
 
 script:
     - yarn run build
-    - yarn run testonce
     - yarn run cover
 
 after_script:
