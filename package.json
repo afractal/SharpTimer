@@ -14,7 +14,7 @@
         "build:w": "tsc -w",
         "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
         "testonce": " \" mocha --recursive ./dist/test \"",
-        "cover": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec ./dist/test/*"
+        "cover": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- -R spec ./dist/test/*"
     },
     "repository": {
         "type": "git",
