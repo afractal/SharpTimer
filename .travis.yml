@@ -12,8 +12,8 @@ install:
     - yarn
 
 script:
-    - yarn run build
-    - yarn run cover
+    - travis_wait 1 yarn run build
+    - travis_wait 1 yarn run cover
 
 after_script:
     codeclimate-test-reporter < coverage/lcov.info
