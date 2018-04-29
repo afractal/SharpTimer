@@ -62,8 +62,7 @@ export class Stopwatch {
             if (this.isRunning) {
                 this._elapsedMilliseconds = (Date.now() - this._startedTimeInMillis);
             }
-            else return;
-        });
+        }, 0);
         this._intervalIds.push(intervalId);
     }
 
