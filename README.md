@@ -1,3 +1,5 @@
+# SharpTimer
+
 [![npm version](https://badge.fury.io/js/sharp-timer.svg)](https://badge.fury.io/js/sharp-timer)
 [![npm](https://img.shields.io/npm/dt/sharp-timer.svg)]()
 [![Build Status](https://travis-ci.org/afractal/SharpTimer.svg?branch=master)](https://travis-ci.org/afractal/SharpTimer)
@@ -6,17 +8,6 @@
 [![codebeat badge](https://codebeat.co/badges/4b996a15-b593-4b28-9c61-84e0029912fc)](https://codebeat.co/projects/github-com-afractal-sharptimer-master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e50887c7ae8916778bfb/maintainability)](https://codeclimate.com/github/afractal/SharpTimer/maintainability)
 <!-- [![Test Coverage](https://api.codeclimate.com/v1/badges/e50887c7ae8916778bfb/test_coverage)](https://codeclimate.com/github/afractal/SharpTimer/test_coverage) -->
-
-## Changes
-
-*v.0.1.**
-
-- [x] timer feature
-- [x] stopwatch feature
-- [x] timespan feature
-- [x] [type definitions](https://www.npmjs.com/package/@types/sharp-timer)
-- [x] tests for timer, stopwatch and timespan
-
 
 ## Examples
 
@@ -92,7 +83,24 @@ console.log(`hours: ${hours}`); // 72
 console.log(`days: ${days}`); // 3
 ```
 
+## Changes
+
+*v.0.1.**
+
+- [x] timer feature
+- [x] stopwatch feature
+- [x] timespan feature
+- [x] [type definitions](https://www.npmjs.com/package/@types/sharp-timer)
+- [x] tests for timer, stopwatch and timespan
+
 ## License
 
 This product is licensed under ther [MIT](./LICENSE.md) license.
+
+---
+
+<p align="center">
+    made with :heart: by <a href="https://github.com/afractal">me</a>
+</p>    
+
 
