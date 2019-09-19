@@ -24,8 +24,12 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      # install packages
       - run: yarn install
-
+      
+      # build project
+      - run: yarn build
+      
       - save_cache:
           paths:
             - node_modules
