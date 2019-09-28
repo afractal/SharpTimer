@@ -1,4 +1,3 @@
-import { assert } from 'chai';
 import { Timespan } from './timespan';
 
 describe('fromMilliseconds', () => {
@@ -6,14 +5,14 @@ describe('fromMilliseconds', () => {
     let timespan = Timespan.fromMilliseconds(expectedMillis);
 
     it('should set the milliseconds property to the specified value', () => {
-        assert.isNotNaN(timespan.milliseconds);
-        assert.isNumber(timespan.milliseconds);
-        assert.deepEqual(timespan.milliseconds, expectedMillis);
+        expect(timespan.milliseconds).not.toBeNaN();
+        expect(timespan.milliseconds).toBeDefined();
+        expect(timespan.milliseconds).toStrictEqual(expectedMillis);
     });
 
     it('should return a new Timespan instance', () => {
-        assert.instanceOf<Timespan>(timespan, Timespan);
-        assert.isNotNull(timespan);
+        expect(timespan).toBeInstanceOf(Timespan);
+        expect(timespan).not.toBeNull();
     });
 });
 
@@ -22,14 +21,14 @@ describe('fromSeconds', () => {
     let timespan = Timespan.fromSeconds(expectedSeconds);
 
     it('should set the seconds property to the specified value', () => {
-        assert.isNotNaN(timespan.seconds);
-        assert.isNumber(timespan.seconds);
-        assert.deepEqual(timespan.seconds, expectedSeconds);
+        expect(timespan.seconds).not.toBeNaN();
+        expect(timespan.seconds).toBeDefined();
+        expect(timespan.seconds).toStrictEqual(expectedSeconds);
     });
 
     it('should return a new Timespan instance', () => {
-        assert.instanceOf<Timespan>(timespan, Timespan);
-        assert.isNotNull(timespan);
+        expect(timespan).toBeInstanceOf(Timespan);
+        expect(timespan).not.toBeNull();
     });
 });
 
@@ -38,14 +37,14 @@ describe('fromMinutes', () => {
     let timespan = Timespan.fromMinutes(expectedMinutes);
 
     it('should set the minutes property to the specified value', () => {
-        assert.isNotNaN(timespan.minutes);
-        assert.isNumber(timespan.minutes);
-        assert.deepEqual(timespan.minutes, expectedMinutes);
+        expect(timespan.minutes).not.toBeNaN();
+        expect(timespan.minutes).toBeDefined();
+        expect(timespan.minutes).toStrictEqual(expectedMinutes);
     });
 
     it('should return a new Timespan instance', () => {
-        assert.instanceOf<Timespan>(timespan, Timespan);
-        assert.isNotNull(timespan);
+        expect(timespan).toBeInstanceOf(Timespan)
+        expect(timespan).not.toBeNull();
     });
 });
 
@@ -54,14 +53,14 @@ describe('fromHours', () => {
     let timespan = Timespan.fromHours(expectedHours);
 
     it('should set the hours property to the specified value', () => {
-        assert.isNotNaN(timespan.hours);
-        assert.isNumber(timespan.hours);
-        assert.deepEqual(timespan.hours, expectedHours);
+        expect(timespan.hours).not.toBeNaN();
+        expect(timespan.hours).toBeDefined();
+        expect(timespan.hours).toStrictEqual(expectedHours);
     });
 
     it('should return a new Timespan instance', () => {
-        assert.instanceOf<Timespan>(timespan, Timespan);
-        assert.isNotNull(timespan);
+        expect(timespan).toBeInstanceOf(Timespan);
+        expect(timespan).toBeDefined();
     });
 });
 
@@ -70,14 +69,14 @@ describe('fromDays', () => {
     let timespan = Timespan.fromDays(expectedDays);
 
     it('should set the days property to the specified value', () => {
-        assert.isNotNaN(timespan.days);
-        assert.isNumber(timespan.days);
-        assert.deepEqual(timespan.days, expectedDays);
+        expect(timespan.days).not.toBeNaN();
+        expect(timespan.days).toBeDefined;
+        expect(timespan.days).toStrictEqual(expectedDays);
     });
 
     it('should return a new Timespan instance', () => {
-        assert.instanceOf<Timespan>(timespan, Timespan);
-        assert.isNotNull(timespan);
+        expect(timespan).toBeInstanceOf(Timespan);
+        expect(timespan).not.toBeNull();
     });
 });
 
@@ -86,7 +85,8 @@ describe('equals', () => {
         const millis = 1;
         let timer1 = Timespan.fromMilliseconds(millis);
         let timer2 = Timespan.fromMilliseconds(millis);
-        assert.isTrue(Timespan.equals(timer1, timer2));
+
+        expect(Timespan.equals(timer1, timer2)).toBeTruthy();
     });
 });
 
@@ -95,7 +95,8 @@ describe('compare', () => {
         const expectedCompareNumber = 1;
         let timer1 = Timespan.fromMilliseconds(2);
         let timer2 = Timespan.fromMilliseconds(1);
-        assert.deepEqual(Timespan.compare(timer1, timer2), expectedCompareNumber);
+
+        expect(Timespan.compare(timer1, timer2)).toStrictEqual(expectedCompareNumber);
     });
 
     it('should return -1 if the first object has a lower milliseconds number than the second object', () => {
@@ -103,14 +104,16 @@ describe('compare', () => {
 
         let timer1 = Timespan.fromMilliseconds(1);
         let timer2 = Timespan.fromMilliseconds(2);
-        assert.deepEqual(Timespan.compare(timer1, timer2), expectedCompareNumber);
+
+        expect(Timespan.compare(timer1, timer2)).toStrictEqual(expectedCompareNumber);
     });
 
     it('should return 0 if the first object has the same milliseconds number as the second object', () => {
         const expectedCompareNumber = 0;
         let timer1 = Timespan.fromMilliseconds(1);
         let timer2 = Timespan.fromMilliseconds(1);
-        assert.deepEqual(Timespan.compare(timer1, timer2), expectedCompareNumber);
+
+        expect(Timespan.compare(timer1, timer2)).toStrictEqual(expectedCompareNumber);
     });
 });
 
@@ -120,8 +123,8 @@ describe('addMutable', () => {
         let timer = Timespan.fromMilliseconds(4000);
         timer.addMutable(Timespan.fromMilliseconds(4000));
 
-        assert.isNotNull(timer);
-        assert.deepEqual(timer.milliseconds, expectedMilliseconds);
+        expect(timer).not.toBeNull();
+        expect(timer.milliseconds).toStrictEqual(expectedMilliseconds);
     });
 })
 
@@ -131,10 +134,10 @@ describe('add', () => {
         let timer = Timespan.fromMilliseconds(4000);
         let newTimer = timer.add(Timespan.fromMilliseconds(4000));
 
-        assert.isNotNull(newTimer);
-        assert.instanceOf<Timespan>(newTimer, Timespan);
-        assert.notDeepEqual(timer.milliseconds, expectedMilliseconds);
-        assert.deepEqual(newTimer.milliseconds, expectedMilliseconds);
+        expect(newTimer).not.toBeNull();
+        expect(newTimer).toBeInstanceOf(Timespan);
+        expect(timer.milliseconds).not.toStrictEqual(expectedMilliseconds);
+        expect(newTimer.milliseconds).toStrictEqual(expectedMilliseconds);
     });
 })
 
@@ -144,8 +147,8 @@ describe('addMutable', () => {
         let timer = Timespan.fromMilliseconds(8000);
         timer.substractMutable(Timespan.fromMilliseconds(4000));
 
-        assert.isNotNull(timer);
-        assert.deepEqual(timer.milliseconds, expectedMilliseconds);
+        expect(timer).not.toBeNull();
+        expect(timer.milliseconds).toStrictEqual(expectedMilliseconds);
     });
 })
 
@@ -155,10 +158,10 @@ describe('substract', () => {
         let timer = Timespan.fromMilliseconds(8000);
         let newTimer = timer.substract(Timespan.fromMilliseconds(4000));
 
-        assert.isNotNull(newTimer);
-        assert.instanceOf<Timespan>(newTimer, Timespan);
-        assert.notDeepEqual(timer.milliseconds, expectedMilliseconds);
-        assert.deepEqual(newTimer.milliseconds, expectedMilliseconds);
+        expect(newTimer).not.toBeNull();
+        expect(newTimer).toBeInstanceOf(Timespan);
+        expect(timer.milliseconds).not.toStrictEqual(expectedMilliseconds);
+        expect(newTimer.milliseconds).toStrictEqual(expectedMilliseconds);
     });
 })
 
@@ -169,6 +172,6 @@ describe('negate', () => {
         timer.substractMutable(Timespan.fromMilliseconds(8000));
         let newTimer = timer.negate();
 
-        assert.deepEqual(newTimer.milliseconds, expectedMilliseconds);
+        expect(newTimer.milliseconds).toStrictEqual(expectedMilliseconds);
     });
 });

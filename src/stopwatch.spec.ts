@@ -1,12 +1,12 @@
-import { assert } from 'chai';
 import { Stopwatch } from './stopwatch';
 
 const increaseIntervalContinuosly = function (done: any) {
     let stopwatch = new Stopwatch();
     stopwatch.start();
+
     const expectedInterval = stopwatch.elapsedMilliseconds;
     const intervalId = setInterval(() => {
-        assert.notDeepEqual(stopwatch.elapsedMilliseconds, expectedInterval);
+        expect(stopwatch.elapsedMilliseconds).not.toStrictEqual(expectedInterval);
     }, 10);
 
     setTimeout(() => {
@@ -27,7 +27,7 @@ const notIncreaseIntervalContinuosly = function (done: any) {
     }, 10);
 
     const intervalId = setInterval(() => {
-        assert.deepEqual(stopwatch.elapsedMilliseconds, expectedInterval);
+        expect(stopwatch.elapsedMilliseconds).toStrictEqual(expectedInterval);
     }, 20);
 
     setTimeout(() => {
@@ -39,12 +39,14 @@ const notIncreaseIntervalContinuosly = function (done: any) {
 
 describe('ctor', () => {
     it('should initialize field properly', () => {
-        const expectedMillis = 0, expectedIsRunning = false;
+        const expectedMillis = 0,
+            expectedIsRunning = false;
 
         let stopwatch = new Stopwatch();
-        assert.deepEqual(stopwatch.elapsedMilliseconds, expectedMillis);
-        assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
-        assert.isNotNaN(stopwatch.elapsedMilliseconds);
+
+        expect(stopwatch.elapsedMilliseconds).toStrictEqual(expectedMillis);
+        expect(stopwatch.isRunning).toStrictEqual(expectedIsRunning);
+        expect(stopwatch.elapsedMilliseconds).not.toBeNaN();
     });
 });
 
@@ -53,7 +55,9 @@ describe('start', () => {
         const expectedIsRunning = true;
         let stopwatch = new Stopwatch();
         stopwatch.start();
-        assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
+
+        expect(stopwatch.isRunning).toStrictEqual(expectedIsRunning);
+
         stopwatch.dispose();
     });
 
@@ -65,8 +69,8 @@ describe('startNew', () => {
         const expectedIsRunning = true;
         let stopwatch = Stopwatch.startNew();
 
-        assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
-        assert.instanceOf(stopwatch, Stopwatch);
+        expect(stopwatch.isRunning).toStrictEqual(expectedIsRunning);
+        expect(stopwatch).toBeInstanceOf(Stopwatch);
 
         stopwatch.dispose();
     });
@@ -80,7 +84,9 @@ describe('stop', () => {
         let stopwatch = new Stopwatch();
         stopwatch.start();
         stopwatch.stop();
-        assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
+
+        expect(stopwatch.isRunning).toStrictEqual(expectedIsRunning);
+
         stopwatch.dispose();
     });
 
@@ -93,7 +99,9 @@ describe('reset', () => {
         let stopwatch = new Stopwatch();
         stopwatch.start();
         stopwatch.reset();
-        assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
+
+        expect(stopwatch.isRunning).toStrictEqual(expectedIsRunning);
+
         stopwatch.dispose();
     });
 
@@ -104,7 +112,8 @@ describe('reset', () => {
 
         setTimeout(() => {
             stopwatch.reset();
-            assert.deepEqual(stopwatch.elapsedMilliseconds, expectedElapsedMillis);
+
+            expect(stopwatch.elapsedMilliseconds).toStrictEqual(expectedElapsedMillis);
 
             done();
             stopwatch.dispose();
@@ -126,8 +135,8 @@ describe('restart', () => {
             const expectedIsRunning = true;
 
             const intervalId = setInterval(() => {
-                assert.notDeepEqual(stopwatch.elapsedMilliseconds, expectedMillis);
-                assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
+                expect(stopwatch.elapsedMilliseconds).not.toStrictEqual(expectedMillis);
+                expect(stopwatch.isRunning).toStrictEqual(expectedIsRunning);
             }, 10);
 
             setTimeout(() => {
@@ -143,11 +152,11 @@ describe('restart', () => {
 
 describe('dispose', () => {
     it('should set the isRunning property to false', () => {
-        const expectedIsRunning = false;
         let stopwatch = new Stopwatch();
         stopwatch.start();
         stopwatch.dispose();
-        assert.deepEqual(stopwatch.isRunning, expectedIsRunning);
+
+        expect(stopwatch.isRunning).toBeFalsy();
     });
 
     it('should not increase elapsed milliseconds continuously', notIncreaseIntervalContinuosly);
