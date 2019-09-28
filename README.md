@@ -78,7 +78,15 @@ console.log(`days: ${days}`); // 3
 
 ## Changes
 
-*v.0.1.**
+*v0.2.**
+
+- [x] cleanup codebase
+- [x] switch to jest
+- [x] add circle ci
+- [x] remove unnecessary ci's
+- [x] add github package registry support
+
+*v0.1.**
 
 - [x] timer feature
 - [x] stopwatch feature
