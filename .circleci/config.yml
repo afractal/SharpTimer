@@ -26,10 +26,10 @@ jobs:
 
       # install packages
       - run: yarn install
-      
+
       # build project
       - run: yarn build
-      
+
       - save_cache:
           paths:
             - node_modules
