@@ -1,6 +1,6 @@
 # SharpTimer
 
-[![GPR](https://img.shields.io/github/release/afractal/SharpTimer.svg?label=GPR&logo=github)](https://github.com/afractal/SharpTimer/packages/28631) [![npm version](https://badge.fury.io/js/sharp-timer.svg)](https://badge.fury.io/js/sharp-timer) [![npm](https://img.shields.io/npm/dt/sharp-timer.svg)]() [![CircleCI](https://circleci.com/gh/afractal/SharpTimer.svg?style=svg)](https://circleci.com/gh/afractal/SharpTimer)
+[![CircleCI](https://circleci.com/gh/afractal/SharpTimer.svg?style=svg)](https://circleci.com/gh/afractal/SharpTimer) [![GPR](https://img.shields.io/github/release/afractal/SharpTimer.svg?label=GPR&logo=github)](https://github.com/afractal/SharpTimer/packages/28631) [![npm version](https://badge.fury.io/js/sharp-timer.svg)](https://badge.fury.io/js/sharp-timer) [![npm](https://img.shields.io/npm/dt/sharp-timer.svg)]()
 
 ## Examples
 
