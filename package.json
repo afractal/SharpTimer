@@ -1,25 +1,12 @@
 {
     "name": "sharp-timer",
-    "version": "0.1.6",
+    "version": "0.2.1",
     "author": "afractal",
     "description": "Simple timers utility library with api (mostly) inspired  by .NET equivalents",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index",
     "license": "MIT",
     "homepage": "https://github.com/afractal/SharpTimer#readme",
-    "scripts": {
-        "start": "tsc -w",
-        "build": "tsc",
-        "build:ci": "tsc --noEmit --rootDir ./src",
-        "build:w": "tsc -w",
-        "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
-        "testonce": "mocha --recursive ./dist/test",
-        "cover": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- -R spec ./dist/test/*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/afractal/SharpTimer.git"
-    },
     "bugs": {
         "url": "https://github.com/afractal/SharpTimer/issues"
     },
@@ -29,18 +16,25 @@
         "timer",
         "timers"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/afractal/SharpTimer.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/@afractal"
+    },
+    "scripts": {
+        "start": "tsc -w",
+        "build": "tsc --build",
+        "test": "yarn build && jest --config=\"jest.config.js\" --detectOpenHandles --forceExit",
+        "deploy": "npm publish"
+    },
     "dependencies": {},
     "devDependencies": {
-        "@types/chai": "^4.2.2",
-        "@types/mocha": "^5.2.7",
-        "@types/node": "^12.7.4",
-        "chai": "^4.2.0",
-        "codeclimate-test-reporter": "^0.5.1",
-        "concurrently": "^4.1.2",
-        "coveralls": "^3.0.6",
-        "istanbul": "^0.4.5",
-        "mocha": "^6.2.0",
-        "mocha-lcov-reporter": "^1.3.0",
-        "typescript": "^3.6.2"
+        "@types/jest": "^24.0.18",
+        "@types/node": "^12.7.8",
+        "jest": "^24.9.0",
+        "ts-jest": "^24.1.0",
+        "typescript": "^3.6.3"
     }
 }

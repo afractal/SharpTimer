@@ -1,13 +1,6 @@
 # SharpTimer
 
-[![npm version](https://badge.fury.io/js/sharp-timer.svg)](https://badge.fury.io/js/sharp-timer)
-[![npm](https://img.shields.io/npm/dt/sharp-timer.svg)]()
-[![Build Status](https://travis-ci.org/afractal/SharpTimer.svg?branch=master)](https://travis-ci.org/afractal/SharpTimer)
-[![Coverage Status](https://coveralls.io/repos/github/afractal/SharpTimer/badge.svg?branch=master)](https://coveralls.io/github/afractal/SharpTimer?branch=master)
-[![codebeat badge](https://codebeat.co/badges/4b996a15-b593-4b28-9c61-84e0029912fc)](https://codebeat.co/projects/github-com-afractal-sharptimer-master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/e50887c7ae8916778bfb/maintainability)](https://codeclimate.com/github/afractal/SharpTimer/maintainability)
-<!-- [![Build status](https://ci.appveyor.com/api/projects/status/grw42490qo9lnokb?svg=true)](https://ci.appveyor.com/project/hermesxgjini/sharptimer) -->
-<!-- [![Test Coverage](https://api.codeclimate.com/v1/badges/e50887c7ae8916778bfb/test_coverage)](https://codeclimate.com/github/afractal/SharpTimer/test_coverage) -->
+[![CircleCI](https://circleci.com/gh/afractal/SharpTimer.svg?style=svg)](https://circleci.com/gh/afractal/SharpTimer) [![GPR](https://img.shields.io/github/release/afractal/SharpTimer.svg?label=GPR&logo=github)](https://github.com/afractal/SharpTimer/packages/28631) [![npm version](https://badge.fury.io/js/sharp-timer.svg)](https://badge.fury.io/js/sharp-timer) [![npm](https://img.shields.io/npm/dt/sharp-timer.svg)]()
 
 ## Examples
 
