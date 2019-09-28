@@ -1,21 +1,12 @@
 {
     "name": "sharp-timer",
-    "version": "0.1.6",
+    "version": "0.2.0",
     "author": "afractal",
     "description": "Simple timers utility library with api (mostly) inspired  by .NET equivalents",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index",
     "license": "MIT",
     "homepage": "https://github.com/afractal/SharpTimer#readme",
-    "scripts": {
-        "start": "tsc -w",
-        "build": "tsc",
-        "build:ci": "tsc --noEmit --rootDir ./src",
-        "build:w": "tsc -w",
-        "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
-        "testonce": "mocha --recursive ./dist/test",
-        "cover": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- -R spec ./dist/test/*"
-    },
     "bugs": {
         "url": "https://github.com/afractal/SharpTimer/issues"
     },
@@ -31,6 +22,16 @@
     },
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/@afractal"
+    },
+    "scripts": {
+        "start": "tsc -w",
+        "build": "tsc",
+        "build:ci": "tsc --noEmit --rootDir ./src",
+        "build:w": "tsc -w",
+        "test": "concurrently \" tsc -w \" \" mocha --recursive ./dist/test --watch \" ",
+        "testonce": "mocha --recursive ./dist/test",
+        "cover": "istanbul cover ./node_modules/mocha/bin/mocha --report lcovonly -- -R spec ./dist/test/*",
+        "deploy": "npm publish"
     },
     "dependencies": {},
     "devDependencies": {
