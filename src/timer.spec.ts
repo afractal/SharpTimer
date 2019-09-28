@@ -125,10 +125,6 @@ describe('toString', () => {
         const interval2 = 20 * 24;
         const interval3 = 20 * 13;
 
-        const expectedTimerStr1 = '20:00';
-        const expectedTimerStr2 = '08:00';
-        const expectedTimerStr3 = '04:20';
-
         let timer1 = new Timer(interval1);
         const parsedSecondsTimer1 = Number.parseInt(timer1.toString().slice(3));
         const parsedMinutesTimer1 = Number.parseInt(timer1.toString().slice(0, 3));

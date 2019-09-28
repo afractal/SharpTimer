@@ -1,3 +1,4 @@
+
 export type ElapsedEvent = () => void;
 export type ElapsingEvent = (intervalValue: number) => void;
 
@@ -7,6 +8,7 @@ export class Timer {
     private _interval: number;
     private _intervalElapsedEvents: Array<ElapsedEvent>;
     private _intervalElapsingEvents: Array<ElapsingEvent>;
+
     constructor(interval: number) {
         this.checkForValidInterval(interval);
         // this.autoReset = false;
